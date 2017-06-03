@@ -23,11 +23,6 @@ import org.apache.http.message.BasicNameValuePair;
  *  <artifactId>httpclient</artifactId>
  *  <version>4.5.3</version>
  * </dependency>
- * <dependency>
- *  <groupId>org.apache.httpcomponents</groupId>
- *  <artifactId>fluent-hc</artifactId>
- *  <version>4.5.3</version>
- * </dependency>
  * 
  * 
  * @author L 
@@ -82,8 +77,8 @@ public class Example_01 {
         HttpPost req = new HttpPost("https://www.quyiyuan.com/user/login/");
         // NameValuePair(key-value pair)
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("username", "182xxxx2066"));
-        nvps.add(new BasicNameValuePair("pwd", "passwd"));
+        nvps.add(new BasicNameValuePair("username", "username"));
+        nvps.add(new BasicNameValuePair("pwd", "password"));
         req.setEntity(new UrlEncodedFormEntity(nvps));
         
         //execute request

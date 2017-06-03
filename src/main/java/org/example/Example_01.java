@@ -2,11 +2,18 @@ package org.example;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 
 /**
  * httpclient quick start
@@ -32,7 +39,8 @@ public class Example_01 {
 
 //    public static void main(String[] args) throws Throwable {
 //        // TODO Auto-generated method stub
-//        new Example_01().sendGet();
+////        new Example_01().sendGet();
+////        new Example_01().send_post();
 //    }
     
     public void sendGet() throws Throwable{
@@ -68,8 +76,23 @@ public class Example_01 {
         }
     }
     
-    public void send_post() {
-        //
+    public void send_post() throws Throwable {
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        // post request
+        HttpPost req = new HttpPost("https://www.quyiyuan.com/user/login/");
+        // NameValuePair(key-value pair)
+        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+        nvps.add(new BasicNameValuePair("username", "182xxxx2066"));
+        nvps.add(new BasicNameValuePair("pwd", "passwd"));
+        req.setEntity(new UrlEncodedFormEntity(nvps));
+        
+        //execute request
+        CloseableHttpResponse resp = httpClient.execute(req);
+        try{
+            System.out.println(resp.getStatusLine());
+        } finally {
+            resp.close();
+        }
     }
 
 }

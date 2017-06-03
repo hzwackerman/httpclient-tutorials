@@ -67,5 +67,9 @@ public class Example_01 {
             resp.close();
         }
     }
+    
+    public void send_post() {
+        //
+    }
 
 }

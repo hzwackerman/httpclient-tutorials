@@ -23,11 +23,11 @@ import org.apache.http.client.fluent.Request;
 
 public class Example_02 {
 
-    public static void main(String[] args) throws Throwable {
-        // TODO Auto-generated method stub
-//        new Example_02().sendGet();
-        new Example_02().sendPost();
-    }
+//    public static void main(String[] args) throws Throwable {
+//        // TODO Auto-generated method stub
+////        new Example_02().sendGet();
+////        new Example_02().sendPost();
+//    }
     
     public void sendGet() throws Throwable{
         String resp = Request.Get("https://www.apache.org")

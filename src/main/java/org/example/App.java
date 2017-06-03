@@ -10,6 +10,9 @@ public class App {
         // test example_01
         new Example_01().sendGet();
         new Example_01().send_post();
+        // test example_02
+        new Example_02().sendGet();
+        new Example_02().sendPost();
     }
 
 }

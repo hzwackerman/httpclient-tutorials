@@ -30,12 +30,12 @@ import org.apache.http.impl.client.HttpClients;
 
 public class Example_01 {
 
-    public static void main(String[] args) throws Throwable {
-        // TODO Auto-generated method stub
-        new Example_01().sendGet();
-    }
+//    public static void main(String[] args) throws Throwable {
+//        // TODO Auto-generated method stub
+//        new Example_01().sendGet();
+//    }
     
-    private void sendGet() throws Throwable{
+    public void sendGet() throws Throwable{
         String url = "https://www.quyiyuan.com/hospital/210004/";
         
         //创建httpclient实例
